@@ -62,33 +62,40 @@ namespace RestaurantManagementSystem
             // 
             // exitBtn
             // 
-            this.exitBtn.Location = new System.Drawing.Point(386, 467);
+            this.exitBtn.BackColor = System.Drawing.Color.LightBlue;
+            this.exitBtn.FlatAppearance.BorderSize = 0;
+            this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitBtn.Location = new System.Drawing.Point(386, 484);
             this.exitBtn.Margin = new System.Windows.Forms.Padding(4);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(198, 44);
             this.exitBtn.TabIndex = 6;
             this.exitBtn.Text = "Exit";
-            this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.UseVisualStyleBackColor = false;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // loginBtn
             // 
-            this.loginBtn.Location = new System.Drawing.Point(163, 467);
+            this.loginBtn.BackColor = System.Drawing.Color.LightBlue;
+            this.loginBtn.FlatAppearance.BorderSize = 0;
+            this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginBtn.ForeColor = System.Drawing.Color.Black;
+            this.loginBtn.Location = new System.Drawing.Point(164, 484);
             this.loginBtn.Margin = new System.Windows.Forms.Padding(4);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(198, 44);
             this.loginBtn.TabIndex = 5;
             this.loginBtn.Text = "Login";
-            this.loginBtn.UseVisualStyleBackColor = true;
+            this.loginBtn.UseVisualStyleBackColor = false;
             this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // passwordTextbox
             // 
             this.passwordTextbox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTextbox.Location = new System.Drawing.Point(164, 415);
+            this.passwordTextbox.Location = new System.Drawing.Point(164, 422);
             this.passwordTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.passwordTextbox.Name = "passwordTextbox";
-            this.passwordTextbox.Size = new System.Drawing.Size(420, 29);
+            this.passwordTextbox.Size = new System.Drawing.Size(420, 34);
             this.passwordTextbox.TabIndex = 4;
             this.passwordTextbox.UseSystemPasswordChar = true;
             // 
@@ -97,10 +104,10 @@ namespace RestaurantManagementSystem
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameLabel.ForeColor = System.Drawing.Color.White;
-            this.usernameLabel.Location = new System.Drawing.Point(160, 327);
+            this.usernameLabel.Location = new System.Drawing.Point(160, 320);
             this.usernameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(81, 21);
+            this.usernameLabel.Size = new System.Drawing.Size(99, 28);
             this.usernameLabel.TabIndex = 1;
             this.usernameLabel.Text = "Username";
             // 
@@ -112,7 +119,7 @@ namespace RestaurantManagementSystem
             this.passwordLabel.Location = new System.Drawing.Point(160, 390);
             this.passwordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(76, 21);
+            this.passwordLabel.Size = new System.Drawing.Size(93, 28);
             this.passwordLabel.TabIndex = 3;
             this.passwordLabel.Text = "Password";
             // 
@@ -122,7 +129,7 @@ namespace RestaurantManagementSystem
             this.usernameTextbox.Location = new System.Drawing.Point(164, 352);
             this.usernameTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.usernameTextbox.Name = "usernameTextbox";
-            this.usernameTextbox.Size = new System.Drawing.Size(420, 29);
+            this.usernameTextbox.Size = new System.Drawing.Size(420, 34);
             this.usernameTextbox.TabIndex = 2;
             // 
             // pictureBox1
@@ -139,7 +146,7 @@ namespace RestaurantManagementSystem
             // 
             // loginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1333, 827);

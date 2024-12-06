@@ -38,6 +38,8 @@ namespace RestaurantManagementSystem
             else
             {
                 this.Hide();
+                mainForm frm = new mainForm();
+                frm.Show();
             }
         }
     }
