@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addFormTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addFormTemplate.Designer.cs">
+      <DependentUpon>addFormTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="homeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +74,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="viewFormTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewFormTemplate.Designer.cs">
+      <DependentUpon>viewFormTemplate.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="addFormTemplate.resx">
+      <DependentUpon>addFormTemplate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="homeForm.resx">
       <DependentUpon>homeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +102,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="viewFormTemplate.resx">
+      <DependentUpon>viewFormTemplate.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -113,6 +132,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addBtn.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

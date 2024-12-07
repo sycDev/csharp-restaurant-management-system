@@ -46,7 +46,7 @@ namespace RestaurantManagementSystem
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.panel1.Controls.Add(this.exitBtn);
             this.panel1.Controls.Add(this.loginBtn);
             this.panel1.Controls.Add(this.passwordTextbox);
@@ -62,30 +62,31 @@ namespace RestaurantManagementSystem
             // 
             // exitBtn
             // 
-            this.exitBtn.BackColor = System.Drawing.Color.LightBlue;
+            this.exitBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.exitBtn.FlatAppearance.BorderSize = 0;
             this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitBtn.ForeColor = System.Drawing.Color.DimGray;
             this.exitBtn.Location = new System.Drawing.Point(386, 484);
             this.exitBtn.Margin = new System.Windows.Forms.Padding(4);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(198, 44);
             this.exitBtn.TabIndex = 6;
-            this.exitBtn.Text = "Exit";
+            this.exitBtn.Text = "EXIT";
             this.exitBtn.UseVisualStyleBackColor = false;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // loginBtn
             // 
-            this.loginBtn.BackColor = System.Drawing.Color.LightBlue;
+            this.loginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.loginBtn.FlatAppearance.BorderSize = 0;
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginBtn.ForeColor = System.Drawing.Color.Black;
+            this.loginBtn.ForeColor = System.Drawing.Color.White;
             this.loginBtn.Location = new System.Drawing.Point(164, 484);
             this.loginBtn.Margin = new System.Windows.Forms.Padding(4);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(198, 44);
             this.loginBtn.TabIndex = 5;
-            this.loginBtn.Text = "Login";
+            this.loginBtn.Text = "LOGIN";
             this.loginBtn.UseVisualStyleBackColor = false;
             this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
