@@ -31,7 +31,7 @@ namespace RestaurantManagementSystem
         {
             if (MainClass.IsValidUser(usernameTextbox.Text, passwordTextbox.Text) == false)
             {
-                MessageBox.Show("Invalid username or password");
+                MessageBox.Show("Invalid username or password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return;
             }

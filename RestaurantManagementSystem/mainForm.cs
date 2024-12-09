@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestaurantManagementSystem.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,14 +27,14 @@ namespace RestaurantManagementSystem
             f.Show();
         }
 
-        private void mainForm_Load(object sender, EventArgs e)
-        {
-            unameDisplayLabel.Text = MainClass.USER;
-        }
-
         private void homeBtn_Click(object sender, EventArgs e)
         {
             AddControls(new homeForm());
+        }
+
+        private void categoriesBtn_Click(object sender, EventArgs e)
+        {
+            AddControls(new categoryViewForm());
         }
     }
 }

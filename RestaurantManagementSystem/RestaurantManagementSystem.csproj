@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addFormTemplate.cs">
+    <Compile Include="detailsFormTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addFormTemplate.Designer.cs">
-      <DependentUpon>addFormTemplate.cs</DependentUpon>
+    <Compile Include="detailsFormTemplate.Designer.cs">
+      <DependentUpon>detailsFormTemplate.cs</DependentUpon>
     </Compile>
     <Compile Include="homeForm.cs">
       <SubType>Form</SubType>
@@ -72,16 +72,33 @@
     <Compile Include="mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\categoryDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\categoryDetailsForm.Designer.cs">
+      <DependentUpon>categoryDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="viewFormTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="viewFormTemplate.Designer.cs">
       <DependentUpon>viewFormTemplate.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="addFormTemplate.resx">
-      <DependentUpon>addFormTemplate.cs</DependentUpon>
+    <Compile Include="View\categoryViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\categoryViewForm.Designer.cs">
+      <DependentUpon>categoryViewForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="detailsFormTemplate.resx">
+      <DependentUpon>detailsFormTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="homeForm.resx">
       <DependentUpon>homeForm.cs</DependentUpon>
@@ -92,18 +109,19 @@
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Model\categoryDetailsForm.resx">
+      <DependentUpon>categoryDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="viewFormTemplate.resx">
       <DependentUpon>viewFormTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\categoryViewForm.resx">
+      <DependentUpon>categoryViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -136,5 +154,42 @@
   <ItemGroup>
     <None Include="Resources\addBtn.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleteBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homeBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categoriesBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\productsBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tablesBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staffBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\POSbtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kitchenBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settingsBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuBtn.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

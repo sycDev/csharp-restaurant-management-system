@@ -29,37 +29,50 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(homeForm));
-            this.label1 = new System.Windows.Forms.Label();
+            this.unameDisplayLabel = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // unameDisplayLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(712, 422);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Home";
+            this.unameDisplayLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.unameDisplayLabel.Location = new System.Drawing.Point(561, 412);
+            this.unameDisplayLabel.Name = "unameDisplayLabel";
+            this.unameDisplayLabel.Size = new System.Drawing.Size(96, 28);
+            this.unameDisplayLabel.TabIndex = 1;
+            this.unameDisplayLabel.Text = "username";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.Controls.Add(this.unameDisplayLabel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1231, 866);
+            this.panel1.TabIndex = 2;
             // 
             // homeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1562, 913);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1231, 866);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "homeForm";
             this.Text = "iRestaurant - Home";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.homeForm_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label unameDisplayLabel;
+        private System.Windows.Forms.Panel panel1;
     }
 }

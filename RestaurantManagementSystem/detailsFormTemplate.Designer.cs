@@ -1,6 +1,6 @@
 ﻿namespace RestaurantManagementSystem
 {
-    partial class addFormTemplate
+    partial class detailsFormTemplate
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.topPanel = new System.Windows.Forms.Panel();
-            this.bottomPanel = new System.Windows.Forms.Panel();
             this.headerLabel = new System.Windows.Forms.Label();
-            this.saveBtn = new System.Windows.Forms.Button();
-            this.closeBtn = new System.Windows.Forms.Button();
             this.picturebox = new System.Windows.Forms.PictureBox();
+            this.bottomPanel = new System.Windows.Forms.Panel();
+            this.closeBtn = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
             this.topPanel.SuspendLayout();
-            this.bottomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox)).BeginInit();
+            this.bottomPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // topPanel
@@ -50,17 +50,6 @@
             this.topPanel.Size = new System.Drawing.Size(800, 100);
             this.topPanel.TabIndex = 0;
             // 
-            // bottomPanel
-            // 
-            this.bottomPanel.BackColor = System.Drawing.Color.Gainsboro;
-            this.bottomPanel.Controls.Add(this.closeBtn);
-            this.bottomPanel.Controls.Add(this.saveBtn);
-            this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bottomPanel.Location = new System.Drawing.Point(0, 373);
-            this.bottomPanel.Name = "bottomPanel";
-            this.bottomPanel.Size = new System.Drawing.Size(800, 77);
-            this.bottomPanel.TabIndex = 1;
-            // 
             // headerLabel
             // 
             this.headerLabel.AutoSize = true;
@@ -72,9 +61,44 @@
             this.headerLabel.TabIndex = 1;
             this.headerLabel.Text = "Header";
             // 
+            // picturebox
+            // 
+            this.picturebox.BackColor = System.Drawing.Color.White;
+            this.picturebox.Location = new System.Drawing.Point(16, 12);
+            this.picturebox.Name = "picturebox";
+            this.picturebox.Size = new System.Drawing.Size(72, 72);
+            this.picturebox.TabIndex = 0;
+            this.picturebox.TabStop = false;
+            // 
+            // bottomPanel
+            // 
+            this.bottomPanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.bottomPanel.Controls.Add(this.closeBtn);
+            this.bottomPanel.Controls.Add(this.saveBtn);
+            this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bottomPanel.Location = new System.Drawing.Point(0, 373);
+            this.bottomPanel.Name = "bottomPanel";
+            this.bottomPanel.Size = new System.Drawing.Size(800, 77);
+            this.bottomPanel.TabIndex = 1;
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeBtn.ForeColor = System.Drawing.Color.White;
+            this.closeBtn.Location = new System.Drawing.Point(191, 13);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(160, 52);
+            this.closeBtn.TabIndex = 1;
+            this.closeBtn.Text = "CANCEL";
+            this.closeBtn.UseVisualStyleBackColor = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
             // saveBtn
             // 
             this.saveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.saveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.ForeColor = System.Drawing.Color.White;
             this.saveBtn.Location = new System.Drawing.Point(16, 13);
@@ -85,29 +109,7 @@
             this.saveBtn.UseVisualStyleBackColor = false;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
-            // closeBtn
-            // 
-            this.closeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeBtn.ForeColor = System.Drawing.Color.White;
-            this.closeBtn.Location = new System.Drawing.Point(191, 13);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(160, 52);
-            this.closeBtn.TabIndex = 1;
-            this.closeBtn.Text = "CLOSE";
-            this.closeBtn.UseVisualStyleBackColor = false;
-            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
-            // 
-            // picturebox
-            // 
-            this.picturebox.BackColor = System.Drawing.Color.White;
-            this.picturebox.Location = new System.Drawing.Point(16, 12);
-            this.picturebox.Name = "picturebox";
-            this.picturebox.Size = new System.Drawing.Size(72, 72);
-            this.picturebox.TabIndex = 0;
-            this.picturebox.TabStop = false;
-            // 
-            // addFormTemplate
+            // detailsFormTemplate
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
@@ -117,13 +119,13 @@
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "addFormTemplate";
+            this.Name = "detailsFormTemplate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "addFormTemplate";
             this.topPanel.ResumeLayout(false);
             this.topPanel.PerformLayout();
-            this.bottomPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picturebox)).EndInit();
+            this.bottomPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

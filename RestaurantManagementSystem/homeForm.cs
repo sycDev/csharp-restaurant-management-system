@@ -16,5 +16,10 @@ namespace RestaurantManagementSystem
         {
             InitializeComponent();
         }
+
+        private void homeForm_Load(object sender, EventArgs e)
+        {
+            unameDisplayLabel.Text = MainClass.USER;
+        }
     }
 }
