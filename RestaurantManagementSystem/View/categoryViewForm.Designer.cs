@@ -105,6 +105,7 @@
             this.categoryDatagrid.RowTemplate.Height = 40;
             this.categoryDatagrid.Size = new System.Drawing.Size(1082, 535);
             this.categoryDatagrid.TabIndex = 0;
+            this.categoryDatagrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.categoryDatagrid_CellClick);
             // 
             // categoryNo
             // 

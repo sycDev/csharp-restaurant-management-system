@@ -73,6 +73,8 @@ namespace RestaurantManagementSystem
         // For loading data from database
         public static void LoadData(string qry, DataGridView dgv, ListBox lb)
         {
+            dgv.CellFormatting += new DataGridViewCellFormattingEventHandler(gv_CellFormatting);
+
             try
             {
                 SqlCommand cmd = new SqlCommand(qry, con);
@@ -93,6 +95,18 @@ namespace RestaurantManagementSystem
             {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 con.Close();
+            }
+        }
+
+        private static void gv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            DataGridView gv = (DataGridView)sender;
+            int count = 0;
+
+            foreach (DataGridViewRow row in gv.Rows)
+            {
+                count++;
+                row.Cells[0].Value = count;
             }
         }
     }
