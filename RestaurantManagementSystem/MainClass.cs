@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -107,6 +108,25 @@ namespace RestaurantManagementSystem
             {
                 count++;
                 row.Cells[0].Value = count;
+            }
+        }
+
+        public static void BlurBackground(Form model)
+        {
+            Form background = new Form();
+            using (model)
+            {
+                background.StartPosition = FormStartPosition.Manual;
+                background.FormBorderStyle = FormBorderStyle.None;
+                background.Opacity = 0.5d;
+                background.BackColor = Color.Black;
+                background.Size = mainForm.Instance.Size;
+                background.Location = mainForm.Instance.Location;
+                background.ShowInTaskbar = false;
+                background.Show();
+                model.Owner = background;
+                model.ShowDialog(background);
+                background.Dispose();
             }
         }
     }

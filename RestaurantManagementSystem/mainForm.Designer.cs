@@ -268,6 +268,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "iRestaurant";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.mainForm_Load);
             this.sidebarPanel.ResumeLayout(false);
             this.sidebarHeaderPanel.ResumeLayout(false);
             this.sidebarHeaderPanel.PerformLayout();

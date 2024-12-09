@@ -18,6 +18,18 @@ namespace RestaurantManagementSystem
             InitializeComponent();
         }
 
+        static mainForm _obj;
+
+        public static mainForm Instance
+        {
+            get { if (_obj == null) { _obj = new mainForm(); } return _obj; }
+        }
+
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+            _obj = this;
+        }
+
         public void AddControls(Form f)
         {
             mainPanel.Controls.Clear();

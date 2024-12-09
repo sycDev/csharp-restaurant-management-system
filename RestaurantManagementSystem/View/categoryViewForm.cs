@@ -36,8 +36,7 @@ namespace RestaurantManagementSystem.View
 
         public override void addBtn_Click(object sender, EventArgs e)
         {
-            categoryDetailsForm frm = new categoryDetailsForm();
-            frm.ShowDialog();
+            MainClass.BlurBackground(new categoryDetailsForm());
             GetData();
         }
 
@@ -53,7 +52,7 @@ namespace RestaurantManagementSystem.View
                 categoryDetailsForm frm = new categoryDetailsForm();
                 frm.id = Convert.ToInt32(categoryDatagrid.CurrentRow.Cells["categoryId"].Value);
                 frm.categoryNameTextbox.Text = Convert.ToString(categoryDatagrid.CurrentRow.Cells["categoryName"].Value);
-                frm.ShowDialog();
+                MainClass.BlurBackground(frm);
                 GetData();
             }
 
