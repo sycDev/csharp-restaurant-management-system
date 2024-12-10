@@ -48,5 +48,10 @@ namespace RestaurantManagementSystem
         {
             AddControls(new categoryViewForm());
         }
+
+        private void tablesBtn_Click(object sender, EventArgs e)
+        {
+            AddControls(new tableViewForm());
+        }
     }
 }

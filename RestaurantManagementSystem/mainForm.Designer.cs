@@ -172,6 +172,7 @@
             this.tablesBtn.Text = "             Tables";
             this.tablesBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tablesBtn.UseVisualStyleBackColor = true;
+            this.tablesBtn.Click += new System.EventHandler(this.tablesBtn_Click);
             // 
             // staffBtn
             // 

@@ -78,6 +78,12 @@
     <Compile Include="Model\categoryDetailsForm.Designer.cs">
       <DependentUpon>categoryDetailsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\tableDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\tableDetailsForm.Designer.cs">
+      <DependentUpon>tableDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -97,6 +103,12 @@
     <Compile Include="View\categoryViewForm.Designer.cs">
       <DependentUpon>categoryViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\tableViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\tableViewForm.Designer.cs">
+      <DependentUpon>tableViewForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="detailsFormTemplate.resx">
       <DependentUpon>detailsFormTemplate.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +124,9 @@
     <EmbeddedResource Include="Model\categoryDetailsForm.resx">
       <DependentUpon>categoryDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Model\tableDetailsForm.resx">
+      <DependentUpon>tableDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -122,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\categoryViewForm.resx">
       <DependentUpon>categoryViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\tableViewForm.resx">
+      <DependentUpon>tableViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

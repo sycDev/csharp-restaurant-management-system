@@ -53,7 +53,7 @@
             this.searchTextbox.Location = new System.Drawing.Point(832, 86);
             this.searchTextbox.Name = "searchTextbox";
             this.searchTextbox.Size = new System.Drawing.Size(309, 30);
-            this.searchTextbox.TabIndex = 1;
+            this.searchTextbox.TabIndex = 2;
             this.searchTextbox.TextChanged += new System.EventHandler(this.searchTextbox_TextChanged);
             // 
             // headerLabel
@@ -63,7 +63,7 @@
             this.headerLabel.Location = new System.Drawing.Point(53, 27);
             this.headerLabel.Name = "headerLabel";
             this.headerLabel.Size = new System.Drawing.Size(88, 31);
-            this.headerLabel.TabIndex = 3;
+            this.headerLabel.TabIndex = 1;
             this.headerLabel.Text = "Header";
             // 
             // topbarPanel
@@ -73,7 +73,7 @@
             this.topbarPanel.Location = new System.Drawing.Point(0, 0);
             this.topbarPanel.Name = "topbarPanel";
             this.topbarPanel.Size = new System.Drawing.Size(1200, 133);
-            this.topbarPanel.TabIndex = 4;
+            this.topbarPanel.TabIndex = 0;
             // 
             // contentPanel
             // 
@@ -81,7 +81,7 @@
             this.contentPanel.Location = new System.Drawing.Point(0, 133);
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(1200, 547);
-            this.contentPanel.TabIndex = 5;
+            this.contentPanel.TabIndex = 3;
             // 
             // addBtn
             // 

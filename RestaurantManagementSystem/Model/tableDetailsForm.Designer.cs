@@ -1,6 +1,6 @@
 ﻿namespace RestaurantManagementSystem.Model
 {
-    partial class categoryDetailsForm
+    partial class tableDetailsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.categoryNameLabel = new System.Windows.Forms.Label();
-            this.categoryNameTextbox = new System.Windows.Forms.TextBox();
+            this.tableNameTextbox = new System.Windows.Forms.TextBox();
+            this.tableNameLabel = new System.Windows.Forms.Label();
             this.topPanel.SuspendLayout();
             this.bottomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox)).BeginInit();
@@ -47,45 +47,45 @@
             // 
             // headerLabel
             // 
-            this.headerLabel.Size = new System.Drawing.Size(182, 31);
+            this.headerLabel.Size = new System.Drawing.Size(143, 31);
             this.headerLabel.TabIndex = 0;
-            this.headerLabel.Text = "Category Details";
+            this.headerLabel.Text = "Table Details";
             // 
             // picturebox
             // 
             this.picturebox.BackColor = System.Drawing.Color.Transparent;
-            this.picturebox.Image = global::RestaurantManagementSystem.Properties.Resources.category;
+            this.picturebox.Image = global::RestaurantManagementSystem.Properties.Resources.tablesBtn;
             this.picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             // 
-            // categoryNameLabel
+            // tableNameTextbox
             // 
-            this.categoryNameLabel.AutoSize = true;
-            this.categoryNameLabel.Location = new System.Drawing.Point(41, 136);
-            this.categoryNameLabel.Name = "categoryNameLabel";
-            this.categoryNameLabel.Size = new System.Drawing.Size(56, 23);
-            this.categoryNameLabel.TabIndex = 1;
-            this.categoryNameLabel.Text = "Name";
+            this.tableNameTextbox.Location = new System.Drawing.Point(45, 163);
+            this.tableNameTextbox.Name = "tableNameTextbox";
+            this.tableNameTextbox.Size = new System.Drawing.Size(283, 30);
+            this.tableNameTextbox.TabIndex = 1;
             // 
-            // categoryNameTextbox
+            // tableNameLabel
             // 
-            this.categoryNameTextbox.Location = new System.Drawing.Point(45, 163);
-            this.categoryNameTextbox.Name = "categoryNameTextbox";
-            this.categoryNameTextbox.Size = new System.Drawing.Size(283, 30);
-            this.categoryNameTextbox.TabIndex = 1;
+            this.tableNameLabel.AutoSize = true;
+            this.tableNameLabel.Location = new System.Drawing.Point(41, 136);
+            this.tableNameLabel.Name = "tableNameLabel";
+            this.tableNameLabel.Size = new System.Drawing.Size(56, 23);
+            this.tableNameLabel.TabIndex = 1;
+            this.tableNameLabel.Text = "Name";
             // 
-            // categoryDetailsForm
+            // tableDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(366, 322);
-            this.Controls.Add(this.categoryNameTextbox);
-            this.Controls.Add(this.categoryNameLabel);
-            this.Name = "categoryDetailsForm";
-            this.Text = "categoryDetailsForm";
+            this.Controls.Add(this.tableNameTextbox);
+            this.Controls.Add(this.tableNameLabel);
+            this.Name = "tableDetailsForm";
+            this.Text = "tableDetailsForm";
             this.Controls.SetChildIndex(this.topPanel, 0);
             this.Controls.SetChildIndex(this.bottomPanel, 0);
-            this.Controls.SetChildIndex(this.categoryNameLabel, 0);
-            this.Controls.SetChildIndex(this.categoryNameTextbox, 0);
+            this.Controls.SetChildIndex(this.tableNameLabel, 0);
+            this.Controls.SetChildIndex(this.tableNameTextbox, 0);
             this.topPanel.ResumeLayout(false);
             this.topPanel.PerformLayout();
             this.bottomPanel.ResumeLayout(false);
@@ -97,7 +97,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label categoryNameLabel;
-        public System.Windows.Forms.TextBox categoryNameTextbox;
+        public System.Windows.Forms.TextBox tableNameTextbox;
+        private System.Windows.Forms.Label tableNameLabel;
     }
 }
