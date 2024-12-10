@@ -191,6 +191,7 @@
             this.staffBtn.Text = "             Staff";
             this.staffBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.staffBtn.UseVisualStyleBackColor = true;
+            this.staffBtn.Click += new System.EventHandler(this.staffBtn_Click);
             // 
             // posBtn
             // 

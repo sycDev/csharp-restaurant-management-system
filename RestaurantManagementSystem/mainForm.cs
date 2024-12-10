@@ -53,5 +53,10 @@ namespace RestaurantManagementSystem
         {
             AddControls(new tableViewForm());
         }
+
+        private void staffBtn_Click(object sender, EventArgs e)
+        {
+            AddControls(new staffViewForm());
+        }
     }
 }

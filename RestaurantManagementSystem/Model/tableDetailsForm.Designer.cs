@@ -54,7 +54,7 @@
             // picturebox
             // 
             this.picturebox.BackColor = System.Drawing.Color.Transparent;
-            this.picturebox.Image = global::RestaurantManagementSystem.Properties.Resources.tablesBtn;
+            this.picturebox.Image = global::RestaurantManagementSystem.Properties.Resources.table;
             this.picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             // 
             // tableNameTextbox
