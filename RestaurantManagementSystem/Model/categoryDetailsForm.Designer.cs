@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(categoryDetailsForm));
             this.categoryNameLabel = new System.Windows.Forms.Label();
             this.categoryNameTextbox = new System.Windows.Forms.TextBox();
             this.topPanel.SuspendLayout();
@@ -80,8 +81,9 @@
             this.ClientSize = new System.Drawing.Size(366, 322);
             this.Controls.Add(this.categoryNameTextbox);
             this.Controls.Add(this.categoryNameLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "categoryDetailsForm";
-            this.Text = "categoryDetailsForm";
+            this.Text = "iRestaurant - Category Details";
             this.Controls.SetChildIndex(this.topPanel, 0);
             this.Controls.SetChildIndex(this.bottomPanel, 0);
             this.Controls.SetChildIndex(this.categoryNameLabel, 0);

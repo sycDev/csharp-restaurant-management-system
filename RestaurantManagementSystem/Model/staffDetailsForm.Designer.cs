@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(staffDetailsForm));
             this.staffNameTextbox = new System.Windows.Forms.TextBox();
             this.staffNameLabel = new System.Windows.Forms.Label();
             this.staffPhoneTextbox = new System.Windows.Forms.TextBox();
@@ -92,6 +93,7 @@
             // 
             // staffRoleCombobox
             // 
+            this.staffRoleCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.staffRoleCombobox.FormattingEnabled = true;
             this.staffRoleCombobox.Items.AddRange(new object[] {
             "Cashier",
@@ -124,8 +126,9 @@
             this.Controls.Add(this.staffPhoneLabel);
             this.Controls.Add(this.staffNameTextbox);
             this.Controls.Add(this.staffNameLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "staffDetailsForm";
-            this.Text = "staffDetailsForm";
+            this.Text = "iRestaurant - Staff Details";
             this.Controls.SetChildIndex(this.topPanel, 0);
             this.Controls.SetChildIndex(this.bottomPanel, 0);
             this.Controls.SetChildIndex(this.staffNameLabel, 0);

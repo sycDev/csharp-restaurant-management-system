@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(categoryViewForm));
             this.categoryDatagrid = new System.Windows.Forms.DataGridView();
             this.categoryNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,24 +41,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.categoryDatagrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // searchTextbox
-            // 
-            this.searchTextbox.TabIndex = 2;
-            // 
             // headerLabel
             // 
             this.headerLabel.Size = new System.Drawing.Size(147, 31);
-            this.headerLabel.TabIndex = 1;
             this.headerLabel.Text = "Category List";
             // 
             // contentPanel
             // 
             this.contentPanel.Controls.Add(this.categoryDatagrid);
-            this.contentPanel.TabIndex = 3;
-            // 
-            // topbarPanel
-            // 
-            this.topbarPanel.TabIndex = 0;
             // 
             // categoryDatagrid
             // 
@@ -85,14 +76,14 @@
             this.categoryDatagrid.Location = new System.Drawing.Point(59, 6);
             this.categoryDatagrid.Name = "categoryDatagrid";
             this.categoryDatagrid.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.categoryDatagrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.categoryDatagrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.categoryDatagrid.RowHeadersWidth = 51;
             this.categoryDatagrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.categoryDatagrid.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -159,8 +150,9 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1200, 680);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "categoryViewForm";
-            this.Text = "categoryViewForm";
+            this.Text = "iRestaurant - Category";
             this.Load += new System.EventHandler(this.categoryViewForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.addBtn)).EndInit();
             this.contentPanel.ResumeLayout(false);

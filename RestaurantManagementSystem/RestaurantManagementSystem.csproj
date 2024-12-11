@@ -78,6 +78,12 @@
     <Compile Include="Model\categoryDetailsForm.Designer.cs">
       <DependentUpon>categoryDetailsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\productDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\productDetailsForm.Designer.cs">
+      <DependentUpon>productDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\staffDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,12 @@
     <Compile Include="View\categoryViewForm.Designer.cs">
       <DependentUpon>categoryViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\productViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\productViewForm.Designer.cs">
+      <DependentUpon>productViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\staffViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +148,9 @@
     <EmbeddedResource Include="Model\categoryDetailsForm.resx">
       <DependentUpon>categoryDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Model\productDetailsForm.resx">
+      <DependentUpon>productDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model\staffDetailsForm.resx">
       <DependentUpon>staffDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\categoryViewForm.resx">
       <DependentUpon>categoryViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\productViewForm.resx">
+      <DependentUpon>productViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\staffViewForm.resx">
       <DependentUpon>staffViewForm.cs</DependentUpon>
@@ -231,6 +249,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\placeholder.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

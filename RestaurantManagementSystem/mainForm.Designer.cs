@@ -154,6 +154,7 @@
             this.productsBtn.Text = "             Products";
             this.productsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.productsBtn.UseVisualStyleBackColor = true;
+            this.productsBtn.Click += new System.EventHandler(this.productsBtn_Click);
             // 
             // tablesBtn
             // 
