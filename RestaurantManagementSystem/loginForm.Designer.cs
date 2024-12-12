@@ -65,6 +65,7 @@ namespace RestaurantManagementSystem
             // exitBtn
             // 
             this.exitBtn.BackColor = System.Drawing.Color.Gainsboro;
+            this.exitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitBtn.FlatAppearance.BorderSize = 0;
             this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitBtn.ForeColor = System.Drawing.Color.DimGray;
@@ -80,6 +81,7 @@ namespace RestaurantManagementSystem
             // loginBtn
             // 
             this.loginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginBtn.FlatAppearance.BorderSize = 0;
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.ForeColor = System.Drawing.Color.White;

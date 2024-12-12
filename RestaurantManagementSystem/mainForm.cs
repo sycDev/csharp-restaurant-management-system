@@ -1,4 +1,5 @@
-﻿using RestaurantManagementSystem.View;
+﻿using RestaurantManagementSystem.Model;
+using RestaurantManagementSystem.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,6 +63,12 @@ namespace RestaurantManagementSystem
         private void productsBtn_Click(object sender, EventArgs e)
         {
             AddControls(new productViewForm());
+        }
+
+        private void posBtn_Click(object sender, EventArgs e)
+        {
+            posForm frm = new posForm();
+            frm.Show();
         }
     }
 }

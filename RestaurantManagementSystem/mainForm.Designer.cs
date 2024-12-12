@@ -32,6 +32,8 @@
             this.appLabel = new System.Windows.Forms.Label();
             this.sidebarPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.sidebarHeaderPanel = new System.Windows.Forms.Panel();
+            this.settingsBtn = new System.Windows.Forms.Button();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.appLogo = new System.Windows.Forms.PictureBox();
             this.homeBtn = new System.Windows.Forms.Button();
             this.categoriesBtn = new System.Windows.Forms.Button();
@@ -40,8 +42,6 @@
             this.staffBtn = new System.Windows.Forms.Button();
             this.posBtn = new System.Windows.Forms.Button();
             this.kitchenBtn = new System.Windows.Forms.Button();
-            this.settingsBtn = new System.Windows.Forms.Button();
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.sidebarPanel.SuspendLayout();
             this.sidebarHeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appLogo)).BeginInit();
@@ -88,6 +88,32 @@
             this.sidebarHeaderPanel.Size = new System.Drawing.Size(297, 149);
             this.sidebarHeaderPanel.TabIndex = 0;
             // 
+            // settingsBtn
+            // 
+            this.settingsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.settingsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.settingsBtn.FlatAppearance.BorderSize = 0;
+            this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingsBtn.ForeColor = System.Drawing.Color.White;
+            this.settingsBtn.Image = global::RestaurantManagementSystem.Properties.Resources.settingsNav;
+            this.settingsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.settingsBtn.Location = new System.Drawing.Point(3, 620);
+            this.settingsBtn.Name = "settingsBtn";
+            this.settingsBtn.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.settingsBtn.Size = new System.Drawing.Size(290, 60);
+            this.settingsBtn.TabIndex = 8;
+            this.settingsBtn.Text = "             Settings";
+            this.settingsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.settingsBtn.UseVisualStyleBackColor = true;
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(300, 0);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1582, 913);
+            this.mainPanel.TabIndex = 1;
+            // 
             // appLogo
             // 
             this.appLogo.BackgroundImage = global::RestaurantManagementSystem.Properties.Resources.icon;
@@ -106,7 +132,7 @@
             this.homeBtn.FlatAppearance.BorderSize = 0;
             this.homeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.homeBtn.ForeColor = System.Drawing.Color.White;
-            this.homeBtn.Image = global::RestaurantManagementSystem.Properties.Resources.homeBtn;
+            this.homeBtn.Image = global::RestaurantManagementSystem.Properties.Resources.homeNav;
             this.homeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.homeBtn.Location = new System.Drawing.Point(3, 158);
             this.homeBtn.Name = "homeBtn";
@@ -125,7 +151,7 @@
             this.categoriesBtn.FlatAppearance.BorderSize = 0;
             this.categoriesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.categoriesBtn.ForeColor = System.Drawing.Color.White;
-            this.categoriesBtn.Image = global::RestaurantManagementSystem.Properties.Resources.categoriesBtn;
+            this.categoriesBtn.Image = global::RestaurantManagementSystem.Properties.Resources.categoriesNav;
             this.categoriesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.categoriesBtn.Location = new System.Drawing.Point(3, 224);
             this.categoriesBtn.Name = "categoriesBtn";
@@ -144,7 +170,7 @@
             this.productsBtn.FlatAppearance.BorderSize = 0;
             this.productsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.productsBtn.ForeColor = System.Drawing.Color.White;
-            this.productsBtn.Image = global::RestaurantManagementSystem.Properties.Resources.productsBtn;
+            this.productsBtn.Image = global::RestaurantManagementSystem.Properties.Resources.productsNav;
             this.productsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.productsBtn.Location = new System.Drawing.Point(3, 290);
             this.productsBtn.Name = "productsBtn";
@@ -163,7 +189,7 @@
             this.tablesBtn.FlatAppearance.BorderSize = 0;
             this.tablesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tablesBtn.ForeColor = System.Drawing.Color.White;
-            this.tablesBtn.Image = global::RestaurantManagementSystem.Properties.Resources.tablesBtn;
+            this.tablesBtn.Image = global::RestaurantManagementSystem.Properties.Resources.tablesNav;
             this.tablesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tablesBtn.Location = new System.Drawing.Point(3, 356);
             this.tablesBtn.Name = "tablesBtn";
@@ -182,7 +208,7 @@
             this.staffBtn.FlatAppearance.BorderSize = 0;
             this.staffBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.staffBtn.ForeColor = System.Drawing.Color.White;
-            this.staffBtn.Image = global::RestaurantManagementSystem.Properties.Resources.staffBtn;
+            this.staffBtn.Image = global::RestaurantManagementSystem.Properties.Resources.staffNav;
             this.staffBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.staffBtn.Location = new System.Drawing.Point(3, 422);
             this.staffBtn.Name = "staffBtn";
@@ -201,7 +227,7 @@
             this.posBtn.FlatAppearance.BorderSize = 0;
             this.posBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.posBtn.ForeColor = System.Drawing.Color.White;
-            this.posBtn.Image = global::RestaurantManagementSystem.Properties.Resources.POSbtn;
+            this.posBtn.Image = global::RestaurantManagementSystem.Properties.Resources.posNav;
             this.posBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.posBtn.Location = new System.Drawing.Point(3, 488);
             this.posBtn.Name = "posBtn";
@@ -211,6 +237,7 @@
             this.posBtn.Text = "             POS";
             this.posBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.posBtn.UseVisualStyleBackColor = true;
+            this.posBtn.Click += new System.EventHandler(this.posBtn_Click);
             // 
             // kitchenBtn
             // 
@@ -219,7 +246,7 @@
             this.kitchenBtn.FlatAppearance.BorderSize = 0;
             this.kitchenBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.kitchenBtn.ForeColor = System.Drawing.Color.White;
-            this.kitchenBtn.Image = global::RestaurantManagementSystem.Properties.Resources.kitchenBtn;
+            this.kitchenBtn.Image = global::RestaurantManagementSystem.Properties.Resources.kitchenNav;
             this.kitchenBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.kitchenBtn.Location = new System.Drawing.Point(3, 554);
             this.kitchenBtn.Name = "kitchenBtn";
@@ -229,32 +256,6 @@
             this.kitchenBtn.Text = "             Kitchen";
             this.kitchenBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.kitchenBtn.UseVisualStyleBackColor = true;
-            // 
-            // settingsBtn
-            // 
-            this.settingsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.settingsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.settingsBtn.FlatAppearance.BorderSize = 0;
-            this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.settingsBtn.ForeColor = System.Drawing.Color.White;
-            this.settingsBtn.Image = global::RestaurantManagementSystem.Properties.Resources.settingsBtn;
-            this.settingsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.settingsBtn.Location = new System.Drawing.Point(3, 620);
-            this.settingsBtn.Name = "settingsBtn";
-            this.settingsBtn.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.settingsBtn.Size = new System.Drawing.Size(290, 60);
-            this.settingsBtn.TabIndex = 8;
-            this.settingsBtn.Text = "             Settings";
-            this.settingsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.settingsBtn.UseVisualStyleBackColor = true;
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(300, 0);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1582, 913);
-            this.mainPanel.TabIndex = 1;
             // 
             // mainForm
             // 

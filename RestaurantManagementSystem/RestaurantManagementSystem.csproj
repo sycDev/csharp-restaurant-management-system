@@ -78,11 +78,23 @@
     <Compile Include="Model\categoryDetailsForm.Designer.cs">
       <DependentUpon>categoryDetailsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\posForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\posForm.Designer.cs">
+      <DependentUpon>posForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\productDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Model\productDetailsForm.Designer.cs">
       <DependentUpon>productDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\productUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Model\productUserControl.Designer.cs">
+      <DependentUpon>productUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\staffDetailsForm.cs">
       <SubType>Form</SubType>
@@ -148,8 +160,14 @@
     <EmbeddedResource Include="Model\categoryDetailsForm.resx">
       <DependentUpon>categoryDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Model\posForm.resx">
+      <DependentUpon>posForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model\productDetailsForm.resx">
       <DependentUpon>productDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\productUserControl.resx">
+      <DependentUpon>productUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\staffDetailsForm.resx">
       <DependentUpon>staffDetailsForm.cs</DependentUpon>
@@ -194,15 +212,6 @@
     <None Include="Resources\login.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\minus.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fullscreen.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\exit.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -218,33 +227,6 @@
     <None Include="Resources\category.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\homeBtn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\categoriesBtn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\productsBtn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\tablesBtn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\staffBtn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\POSbtn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\kitchenBtn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\settingsBtn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\menuBtn.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\staff.png" />
   </ItemGroup>
   <ItemGroup>
@@ -255,6 +237,57 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\POS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newOrderBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\holdBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\billListBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kotBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deliveryBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\takeAwayBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dineInBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\powerOffBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tablesNav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categoriesNav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homeNav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\productsNav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staffNav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\posNav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kitchenNav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settingsNav.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
