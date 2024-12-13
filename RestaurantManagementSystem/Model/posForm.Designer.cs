@@ -44,6 +44,8 @@
             this.powerOffBtn = new System.Windows.Forms.PictureBox();
             this.posIcon = new System.Windows.Forms.PictureBox();
             this.bottomPanel = new System.Windows.Forms.Panel();
+            this.totalTxtLabel = new System.Windows.Forms.Label();
+            this.totalLabel = new System.Windows.Forms.Label();
             this.categoryPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.productPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.orderDatagrid = new System.Windows.Forms.DataGridView();
@@ -55,8 +57,6 @@
             this.orderAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchTextbox = new System.Windows.Forms.TextBox();
             this.searchLabel = new System.Windows.Forms.Label();
-            this.totalLabel = new System.Windows.Forms.Label();
-            this.totalTxtLabel = new System.Windows.Forms.Label();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.powerOffBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.posIcon)).BeginInit();
@@ -102,6 +102,7 @@
             this.dineInBtn.Text = "Dine In";
             this.dineInBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.dineInBtn.UseVisualStyleBackColor = false;
+            this.dineInBtn.Click += new System.EventHandler(this.dineInBtn_Click);
             // 
             // takeAwayBtn
             // 
@@ -120,6 +121,7 @@
             this.takeAwayBtn.Text = "Take Away";
             this.takeAwayBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.takeAwayBtn.UseVisualStyleBackColor = false;
+            this.takeAwayBtn.Click += new System.EventHandler(this.takeAwayBtn_Click);
             // 
             // deliveryBtn
             // 
@@ -138,6 +140,7 @@
             this.deliveryBtn.Text = "Delivery";
             this.deliveryBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.deliveryBtn.UseVisualStyleBackColor = false;
+            this.deliveryBtn.Click += new System.EventHandler(this.deliveryBtn_Click);
             // 
             // kotBtn
             // 
@@ -210,6 +213,7 @@
             this.newBtn.Text = "New";
             this.newBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.newBtn.UseVisualStyleBackColor = false;
+            this.newBtn.Click += new System.EventHandler(this.newBtn_Click);
             // 
             // waiterLabel
             // 
@@ -284,6 +288,32 @@
             this.bottomPanel.Name = "bottomPanel";
             this.bottomPanel.Size = new System.Drawing.Size(1600, 100);
             this.bottomPanel.TabIndex = 6;
+            // 
+            // totalTxtLabel
+            // 
+            this.totalTxtLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.totalTxtLabel.AutoSize = true;
+            this.totalTxtLabel.BackColor = System.Drawing.Color.Transparent;
+            this.totalTxtLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalTxtLabel.ForeColor = System.Drawing.Color.White;
+            this.totalTxtLabel.Location = new System.Drawing.Point(1272, 36);
+            this.totalTxtLabel.Name = "totalTxtLabel";
+            this.totalTxtLabel.Size = new System.Drawing.Size(55, 31);
+            this.totalTxtLabel.TabIndex = 10;
+            this.totalTxtLabel.Text = "0.00";
+            // 
+            // totalLabel
+            // 
+            this.totalLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.totalLabel.AutoSize = true;
+            this.totalLabel.BackColor = System.Drawing.Color.Transparent;
+            this.totalLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalLabel.ForeColor = System.Drawing.Color.White;
+            this.totalLabel.Location = new System.Drawing.Point(1208, 36);
+            this.totalLabel.Name = "totalLabel";
+            this.totalLabel.Size = new System.Drawing.Size(68, 31);
+            this.totalLabel.TabIndex = 9;
+            this.totalLabel.Text = "Total:";
             // 
             // categoryPanel
             // 
@@ -427,32 +457,6 @@
             this.searchLabel.Size = new System.Drawing.Size(61, 23);
             this.searchLabel.TabIndex = 1;
             this.searchLabel.Text = "Search";
-            // 
-            // totalLabel
-            // 
-            this.totalLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.totalLabel.AutoSize = true;
-            this.totalLabel.BackColor = System.Drawing.Color.Transparent;
-            this.totalLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalLabel.ForeColor = System.Drawing.Color.White;
-            this.totalLabel.Location = new System.Drawing.Point(1208, 36);
-            this.totalLabel.Name = "totalLabel";
-            this.totalLabel.Size = new System.Drawing.Size(68, 31);
-            this.totalLabel.TabIndex = 9;
-            this.totalLabel.Text = "Total:";
-            // 
-            // totalTxtLabel
-            // 
-            this.totalTxtLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.totalTxtLabel.AutoSize = true;
-            this.totalTxtLabel.BackColor = System.Drawing.Color.Transparent;
-            this.totalTxtLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalTxtLabel.ForeColor = System.Drawing.Color.White;
-            this.totalTxtLabel.Location = new System.Drawing.Point(1272, 36);
-            this.totalTxtLabel.Name = "totalTxtLabel";
-            this.totalTxtLabel.Size = new System.Drawing.Size(55, 31);
-            this.totalTxtLabel.TabIndex = 10;
-            this.totalTxtLabel.Text = "0.00";
             // 
             // posForm
             // 

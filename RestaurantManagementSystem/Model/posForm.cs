@@ -19,6 +19,10 @@ namespace RestaurantManagementSystem.Model
             InitializeComponent();
         }
 
+        public int mainId = 0;
+
+        public string orderType;
+
         private void powerOffBtn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -58,6 +62,14 @@ namespace RestaurantManagementSystem.Model
         {
             Button categoryBtn = (Button)sender;
 
+            if (categoryBtn.Text == "All Categories")
+            {
+                searchTextbox.Text = "1";
+                searchTextbox.Text = "";
+
+                return;
+            }
+
             foreach (var item in productPanel.Controls)
             {
                 var product = (productUserControl)item;
@@ -96,7 +108,9 @@ namespace RestaurantManagementSystem.Model
                         item.Cells["orderQty"].Value = int.Parse(item.Cells["orderQty"].Value.ToString()) + 1;
                         item.Cells["orderAmount"].Value = (int.Parse(item.Cells["orderQty"].Value.ToString()) * 
                             double.Parse(item.Cells["productPrice"].Value.ToString())).ToString("N2");
+
                         GetTotal();
+
                         return;
                     }
                 }
@@ -157,6 +171,66 @@ namespace RestaurantManagementSystem.Model
             }
 
             totalTxtLabel.Text = total.ToString("N2");
+        }
+
+        private void newBtn_Click(object sender, EventArgs e)
+        {
+            tableLabel.Text = "";
+            waiterLabel.Text = "";
+            tableLabel.Visible = false;
+            waiterLabel.Visible = false;
+            orderDatagrid.Rows.Clear();
+            mainId = 0;
+            totalLabel.Text = "00";
+        }
+
+        private void deliveryBtn_Click(object sender, EventArgs e)
+        {
+            tableLabel.Text = "";
+            waiterLabel.Text = "";
+            tableLabel.Visible = false;
+            waiterLabel.Visible = false;
+            orderType = "Delivery";
+        }
+
+        private void takeAwayBtn_Click(object sender, EventArgs e)
+        {
+            tableLabel.Text = "";
+            waiterLabel.Text = "";
+            tableLabel.Visible = false;
+            waiterLabel.Visible = false;
+            orderType = "Take Away";
+        }
+
+        private void dineInBtn_Click(object sender, EventArgs e)
+        {
+            tableSelectForm tFrm = new tableSelectForm();
+            MainClass.BlurBackground(tFrm);
+
+            if (tFrm.tableName != "")
+            {
+                tableLabel.Text = tFrm.tableName;
+                tableLabel.Visible = true;
+            }
+            else
+            {
+                tableLabel.Text = "";
+                tableLabel.Visible = false;
+            }
+
+            waiterSelectForm wFrm = new waiterSelectForm();
+            MainClass.BlurBackground(wFrm);
+
+            if (wFrm.waiterName != "")
+            {
+                waiterLabel.Text = wFrm.waiterName;
+                waiterLabel.Visible = true;
+            }
+            else
+            {
+                waiterLabel.Text = "";
+                waiterLabel.Visible = false;
+            }
         }
     }
 }
