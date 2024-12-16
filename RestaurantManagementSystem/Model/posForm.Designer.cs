@@ -49,14 +49,15 @@
             this.categoryPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.productPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.orderDatagrid = new System.Windows.Forms.DataGridView();
+            this.searchTextbox = new System.Windows.Forms.TextBox();
+            this.searchLabel = new System.Windows.Forms.Label();
             this.orderNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderDetailsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.searchTextbox = new System.Windows.Forms.TextBox();
-            this.searchLabel = new System.Windows.Forms.Label();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.powerOffBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.posIcon)).BeginInit();
@@ -159,6 +160,7 @@
             this.kotBtn.Text = "KOT";
             this.kotBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.kotBtn.UseVisualStyleBackColor = false;
+            this.kotBtn.Click += new System.EventHandler(this.kotBtn_Click);
             // 
             // billListBtn
             // 
@@ -351,6 +353,7 @@
             this.orderDatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.orderDatagrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.orderNo,
+            this.orderDetailsId,
             this.productId,
             this.productName,
             this.orderQty,
@@ -384,6 +387,23 @@
             this.orderDatagrid.TabIndex = 5;
             this.orderDatagrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.orderDatagrid_CellFormatting);
             // 
+            // searchTextbox
+            // 
+            this.searchTextbox.Location = new System.Drawing.Point(311, 129);
+            this.searchTextbox.Name = "searchTextbox";
+            this.searchTextbox.Size = new System.Drawing.Size(309, 30);
+            this.searchTextbox.TabIndex = 2;
+            this.searchTextbox.TextChanged += new System.EventHandler(this.searchTextbox_TextChanged);
+            // 
+            // searchLabel
+            // 
+            this.searchLabel.AutoSize = true;
+            this.searchLabel.Location = new System.Drawing.Point(248, 132);
+            this.searchLabel.Name = "searchLabel";
+            this.searchLabel.Size = new System.Drawing.Size(61, 23);
+            this.searchLabel.TabIndex = 1;
+            this.searchLabel.Text = "Search";
+            // 
             // orderNo
             // 
             this.orderNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -393,6 +413,15 @@
             this.orderNo.Name = "orderNo";
             this.orderNo.ReadOnly = true;
             this.orderNo.Width = 30;
+            // 
+            // orderDetailsId
+            // 
+            this.orderDetailsId.FillWeight = 50F;
+            this.orderDetailsId.HeaderText = "odID";
+            this.orderDetailsId.MinimumWidth = 50;
+            this.orderDetailsId.Name = "orderDetailsId";
+            this.orderDetailsId.ReadOnly = true;
+            this.orderDetailsId.Visible = false;
             // 
             // productId
             // 
@@ -440,23 +469,6 @@
             this.orderAmount.Name = "orderAmount";
             this.orderAmount.ReadOnly = true;
             this.orderAmount.Width = 75;
-            // 
-            // searchTextbox
-            // 
-            this.searchTextbox.Location = new System.Drawing.Point(311, 129);
-            this.searchTextbox.Name = "searchTextbox";
-            this.searchTextbox.Size = new System.Drawing.Size(309, 30);
-            this.searchTextbox.TabIndex = 2;
-            this.searchTextbox.TextChanged += new System.EventHandler(this.searchTextbox_TextChanged);
-            // 
-            // searchLabel
-            // 
-            this.searchLabel.AutoSize = true;
-            this.searchLabel.Location = new System.Drawing.Point(248, 132);
-            this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(61, 23);
-            this.searchLabel.TabIndex = 1;
-            this.searchLabel.Text = "Search";
             // 
             // posForm
             // 
@@ -510,13 +522,14 @@
         private System.Windows.Forms.DataGridView orderDatagrid;
         public System.Windows.Forms.TextBox searchTextbox;
         public System.Windows.Forms.Label searchLabel;
+        private System.Windows.Forms.Label totalLabel;
+        private System.Windows.Forms.Label totalTxtLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderDetailsId;
         private System.Windows.Forms.DataGridViewTextBoxColumn productId;
         private System.Windows.Forms.DataGridViewTextBoxColumn productName;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn productPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderAmount;
-        private System.Windows.Forms.Label totalLabel;
-        private System.Windows.Forms.Label totalTxtLabel;
     }
 }
