@@ -70,5 +70,10 @@ namespace RestaurantManagementSystem
             posForm frm = new posForm();
             frm.Show();
         }
+
+        private void kitchenBtn_Click(object sender, EventArgs e)
+        {
+            AddControls(new kitchenViewForm());
+        }
     }
 }
