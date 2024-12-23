@@ -133,6 +133,12 @@
     <Compile Include="viewFormTemplate.Designer.cs">
       <DependentUpon>viewFormTemplate.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\billListViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\billListViewForm.Designer.cs">
+      <DependentUpon>billListViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\categoryViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="viewFormTemplate.resx">
       <DependentUpon>viewFormTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\billListViewForm.resx">
+      <DependentUpon>billListViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\categoryViewForm.resx">
       <DependentUpon>categoryViewForm.cs</DependentUpon>
@@ -315,6 +324,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\settingsNav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\billList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
