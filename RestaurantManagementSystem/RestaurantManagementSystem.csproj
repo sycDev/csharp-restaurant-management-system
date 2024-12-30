@@ -78,6 +78,12 @@
     <Compile Include="Model\categoryDetailsForm.Designer.cs">
       <DependentUpon>categoryDetailsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\checkoutDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\checkoutDetailsForm.Designer.cs">
+      <DependentUpon>checkoutDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\posForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Model\categoryDetailsForm.resx">
       <DependentUpon>categoryDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\checkoutDetailsForm.resx">
+      <DependentUpon>checkoutDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\posForm.resx">
       <DependentUpon>posForm.cs</DependentUpon>

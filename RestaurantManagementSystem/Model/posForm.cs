@@ -26,6 +26,8 @@ namespace RestaurantManagementSystem.Model
 
         public string orderType = "";
 
+        public int id = 0;
+
         private void powerOffBtn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -185,6 +187,8 @@ namespace RestaurantManagementSystem.Model
             waiterLabel.Text = "";
             tableLabel.Visible = false;
             waiterLabel.Visible = false;
+            clearBtn.Visible = true;
+            checkoutBtn.Visible = false;
             orderDatagrid.Rows.Clear();
             orderId = 0;
             totalTxtLabel.Text = "0.00";
@@ -360,7 +364,102 @@ namespace RestaurantManagementSystem.Model
 
         private void billListBtn_Click(object sender, EventArgs e)
         {
-            MainClass.BlurBackground(new billListViewForm());
+            billListViewForm frm = new billListViewForm();
+            MainClass.BlurBackground(frm);
+
+            if (frm.oId > 0)
+            {
+                id = frm.oId;
+                LoadEntries();
+                clearBtn.Visible = false;
+                checkoutBtn.Visible = true;
+            }
+        }
+
+        private void LoadEntries()
+        {
+            string qry = @"SELECT * FROM orders o INNER JOIN orderDetails d on o.orderId = d.orderId 
+                INNER JOIN product p on p.productId = d.productId WHERE o.orderId = " + id + "";
+
+            SqlCommand cmd = new SqlCommand(qry, MainClass.con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            if (dt.Rows[0]["orderType"].ToString() == "Delivery")
+            {
+                deliveryBtn.BackColor = Color.FromArgb(50, 55, 89);
+                takeAwayBtn.BackColor = Color.FromArgb(241, 85, 126);
+                dineInBtn.BackColor = Color.FromArgb(241, 85, 126);
+                tableLabel.Visible = false;
+                waiterLabel.Visible = false;
+            }
+            else if (dt.Rows[0]["orderType"].ToString() == "Take Away")
+            {
+                deliveryBtn.BackColor = Color.FromArgb(241, 85, 126);
+                takeAwayBtn.BackColor = Color.FromArgb(50, 55, 89);
+                dineInBtn.BackColor = Color.FromArgb(241, 85, 126);
+                tableLabel.Visible = false;
+                waiterLabel.Visible = false;
+            }
+            else
+            {
+                deliveryBtn.BackColor = Color.FromArgb(241, 85, 126);
+                takeAwayBtn.BackColor = Color.FromArgb(241, 85, 126);
+                dineInBtn.BackColor = Color.FromArgb(50, 55, 89);
+                tableLabel.Visible = true;
+                waiterLabel.Visible = true;
+            }
+
+            orderDatagrid.Rows.Clear();
+
+            foreach (DataRow item in dt.Rows)
+            {
+                tableLabel.Text = item["tableName"].ToString();
+                waiterLabel.Text = item["waiterName"].ToString();
+
+                string detailsId = item["orderDetailsId"].ToString();
+                string productId = item["productId"].ToString();
+                string productName = item["productName"].ToString();
+                string qty = item["qty"].ToString();
+                string price = item["price"].ToString();
+                string amount = item["amount"].ToString();
+
+                object[] obj = { 0, detailsId, productId, productName, qty, price, amount };
+                orderDatagrid.Rows.Add(obj);
+            }
+
+            GetTotal();
+        }
+
+        private void checkoutBtn_Click(object sender, EventArgs e)
+        {
+            checkoutDetailsForm frm = new checkoutDetailsForm();
+            frm.orderId = id;
+            frm.amount = Convert.ToDouble(totalTxtLabel.Text);
+            frm.ProcessSuccessful += CheckoutFormProcessSuccessful;
+            MainClass.BlurBackground(frm);
+        }
+
+        private void CheckoutFormProcessSuccessful(object sender, EventArgs e)
+        {
+            MessageBox.Show("Checkout completed...", "Checkout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Reset order type button checked, clear table name & waiter name, reset total amount
+            deliveryBtn.BackColor = Color.FromArgb(241, 85, 126);
+            takeAwayBtn.BackColor = Color.FromArgb(241, 85, 126);
+            dineInBtn.BackColor = Color.FromArgb(241, 85, 126);
+            tableLabel.Visible = false;
+            waiterLabel.Visible = false;
+            clearBtn.Visible = true;
+            checkoutBtn.Visible = false;
+            orderDatagrid.Rows.Clear();
+            totalTxtLabel.Text = "0.00";
+        }
+
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            orderDatagrid.Rows.Clear();
+            totalTxtLabel.Text = "0.00";
         }
     }
 }

@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(billListViewForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.topPanel = new System.Windows.Forms.Panel();
-            this.headerLabel = new System.Windows.Forms.Label();
-            this.orderDatagrid = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.exitBtn = new System.Windows.Forms.PictureBox();
+            this.headerLabel = new System.Windows.Forms.Label();
             this.picturebox = new System.Windows.Forms.PictureBox();
+            this.orderDatagrid = new System.Windows.Forms.DataGridView();
             this.billNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,10 +44,12 @@
             this.orderTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.orderDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.topPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.orderDatagrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderDatagrid)).BeginInit();
             this.SuspendLayout();
             // 
             // topPanel
@@ -64,6 +64,20 @@
             this.topPanel.Size = new System.Drawing.Size(1200, 100);
             this.topPanel.TabIndex = 2;
             // 
+            // exitBtn
+            // 
+            this.exitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.exitBtn.BackColor = System.Drawing.Color.Transparent;
+            this.exitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitBtn.Image = ((System.Drawing.Image)(resources.GetObject("exitBtn.Image")));
+            this.exitBtn.Location = new System.Drawing.Point(1140, 31);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(35, 35);
+            this.exitBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.exitBtn.TabIndex = 3;
+            this.exitBtn.TabStop = false;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            // 
             // headerLabel
             // 
             this.headerLabel.AutoSize = true;
@@ -74,6 +88,17 @@
             this.headerLabel.Size = new System.Drawing.Size(86, 31);
             this.headerLabel.TabIndex = 1;
             this.headerLabel.Text = "Bill List";
+            // 
+            // picturebox
+            // 
+            this.picturebox.BackColor = System.Drawing.Color.Transparent;
+            this.picturebox.Image = global::RestaurantManagementSystem.Properties.Resources.billList;
+            this.picturebox.Location = new System.Drawing.Point(16, 12);
+            this.picturebox.Name = "picturebox";
+            this.picturebox.Size = new System.Drawing.Size(72, 72);
+            this.picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picturebox.TabIndex = 0;
+            this.picturebox.TabStop = false;
             // 
             // orderDatagrid
             // 
@@ -127,55 +152,7 @@
             this.orderDatagrid.RowTemplate.Height = 40;
             this.orderDatagrid.Size = new System.Drawing.Size(1082, 535);
             this.orderDatagrid.TabIndex = 2;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewImageColumn1.FillWeight = 50F;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::RestaurantManagementSystem.Properties.Resources.editBtn;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.MinimumWidth = 50;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 50;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewImageColumn2.FillWeight = 50F;
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::RestaurantManagementSystem.Properties.Resources.deleteBtn;
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.MinimumWidth = 50;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
-            this.dataGridViewImageColumn2.Width = 50;
-            // 
-            // exitBtn
-            // 
-            this.exitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.exitBtn.BackColor = System.Drawing.Color.Transparent;
-            this.exitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitBtn.Image = ((System.Drawing.Image)(resources.GetObject("exitBtn.Image")));
-            this.exitBtn.Location = new System.Drawing.Point(1140, 31);
-            this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(35, 35);
-            this.exitBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.exitBtn.TabIndex = 3;
-            this.exitBtn.TabStop = false;
-            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
-            // 
-            // picturebox
-            // 
-            this.picturebox.BackColor = System.Drawing.Color.Transparent;
-            this.picturebox.Image = global::RestaurantManagementSystem.Properties.Resources.billList;
-            this.picturebox.Location = new System.Drawing.Point(16, 12);
-            this.picturebox.Name = "picturebox";
-            this.picturebox.Size = new System.Drawing.Size(72, 72);
-            this.picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picturebox.TabIndex = 0;
-            this.picturebox.TabStop = false;
+            this.orderDatagrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orderDatagrid_CellClick);
             // 
             // billNo
             // 
@@ -254,6 +231,30 @@
             this.orderDelete.Visible = false;
             this.orderDelete.Width = 50;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn1.FillWeight = 50F;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::RestaurantManagementSystem.Properties.Resources.editBtn;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.MinimumWidth = 50;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Width = 50;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn2.FillWeight = 50F;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::RestaurantManagementSystem.Properties.Resources.deleteBtn;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.MinimumWidth = 50;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            this.dataGridViewImageColumn2.Width = 50;
+            // 
             // billListViewForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -271,9 +272,9 @@
             this.Load += new System.EventHandler(this.billListViewForm_Load);
             this.topPanel.ResumeLayout(false);
             this.topPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.orderDatagrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderDatagrid)).EndInit();
             this.ResumeLayout(false);
 
         }

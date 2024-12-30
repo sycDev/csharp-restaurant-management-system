@@ -17,6 +17,8 @@ namespace RestaurantManagementSystem.View
             InitializeComponent();
         }
 
+        public int oId = 0;
+
         private void exitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -26,6 +28,7 @@ namespace RestaurantManagementSystem.View
         {
             LoadData();
         }
+
         private void LoadData()
         {
             string qry = @"SELECT orderId, tableName, waiterName, orderType, status, total FROM orders WHERE status <> 'Pending'";
@@ -38,6 +41,15 @@ namespace RestaurantManagementSystem.View
             lb.Items.Add(orderTotal);
 
             MainClass.LoadData(qry, orderDatagrid, lb);
+        }
+
+        private void orderDatagrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (orderDatagrid.CurrentCell.OwningColumn.Name == "orderEdit")
+            {
+                oId = Convert.ToInt32(orderDatagrid.CurrentRow.Cells["orderId"].Value);
+                this.Close();
+            }
         }
     }
 }

@@ -32,7 +32,7 @@
             this.headerLabel = new System.Windows.Forms.Label();
             this.picturebox = new System.Windows.Forms.PictureBox();
             this.bottomPanel = new System.Windows.Forms.Panel();
-            this.closeBtn = new System.Windows.Forms.Button();
+            this.cancelBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox)).BeginInit();
@@ -73,7 +73,7 @@
             // bottomPanel
             // 
             this.bottomPanel.BackColor = System.Drawing.Color.Gainsboro;
-            this.bottomPanel.Controls.Add(this.closeBtn);
+            this.bottomPanel.Controls.Add(this.cancelBtn);
             this.bottomPanel.Controls.Add(this.saveBtn);
             this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bottomPanel.Location = new System.Drawing.Point(0, 373);
@@ -81,19 +81,19 @@
             this.bottomPanel.Size = new System.Drawing.Size(800, 77);
             this.bottomPanel.TabIndex = 1;
             // 
-            // closeBtn
+            // cancelBtn
             // 
-            this.closeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeBtn.ForeColor = System.Drawing.Color.White;
-            this.closeBtn.Location = new System.Drawing.Point(191, 13);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(160, 52);
-            this.closeBtn.TabIndex = 1;
-            this.closeBtn.Text = "CANCEL";
-            this.closeBtn.UseVisualStyleBackColor = false;
-            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            this.cancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.cancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelBtn.ForeColor = System.Drawing.Color.White;
+            this.cancelBtn.Location = new System.Drawing.Point(191, 13);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(160, 52);
+            this.cancelBtn.TabIndex = 1;
+            this.cancelBtn.Text = "CANCEL";
+            this.cancelBtn.UseVisualStyleBackColor = false;
+            this.cancelBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // saveBtn
             // 
@@ -131,7 +131,7 @@
         }
 
         #endregion
-        public System.Windows.Forms.Button closeBtn;
+        public System.Windows.Forms.Button cancelBtn;
         public System.Windows.Forms.Button saveBtn;
         public System.Windows.Forms.Panel topPanel;
         public System.Windows.Forms.Panel bottomPanel;

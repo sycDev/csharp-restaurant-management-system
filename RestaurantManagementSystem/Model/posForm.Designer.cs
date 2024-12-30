@@ -44,6 +44,7 @@
             this.powerOffBtn = new System.Windows.Forms.PictureBox();
             this.posIcon = new System.Windows.Forms.PictureBox();
             this.bottomPanel = new System.Windows.Forms.Panel();
+            this.checkoutBtn = new System.Windows.Forms.Button();
             this.totalTxtLabel = new System.Windows.Forms.Label();
             this.totalLabel = new System.Windows.Forms.Label();
             this.categoryPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -58,11 +59,13 @@
             this.orderAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchTextbox = new System.Windows.Forms.TextBox();
             this.searchLabel = new System.Windows.Forms.Label();
+            this.clearBtn = new System.Windows.Forms.PictureBox();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.powerOffBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.posIcon)).BeginInit();
             this.bottomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderDatagrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clearBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // topPanel
@@ -284,6 +287,7 @@
             // bottomPanel
             // 
             this.bottomPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.bottomPanel.Controls.Add(this.checkoutBtn);
             this.bottomPanel.Controls.Add(this.totalTxtLabel);
             this.bottomPanel.Controls.Add(this.totalLabel);
             this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -291,6 +295,22 @@
             this.bottomPanel.Name = "bottomPanel";
             this.bottomPanel.Size = new System.Drawing.Size(1600, 100);
             this.bottomPanel.TabIndex = 6;
+            // 
+            // checkoutBtn
+            // 
+            this.checkoutBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkoutBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.checkoutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkoutBtn.ForeColor = System.Drawing.Color.White;
+            this.checkoutBtn.Location = new System.Drawing.Point(1428, 25);
+            this.checkoutBtn.Name = "checkoutBtn";
+            this.checkoutBtn.Size = new System.Drawing.Size(160, 52);
+            this.checkoutBtn.TabIndex = 11;
+            this.checkoutBtn.Text = "CHECK OUT";
+            this.checkoutBtn.UseVisualStyleBackColor = false;
+            this.checkoutBtn.Visible = false;
+            this.checkoutBtn.Click += new System.EventHandler(this.checkoutBtn_Click);
             // 
             // totalTxtLabel
             // 
@@ -458,7 +478,7 @@
             // 
             this.searchTextbox.Location = new System.Drawing.Point(311, 129);
             this.searchTextbox.Name = "searchTextbox";
-            this.searchTextbox.Size = new System.Drawing.Size(309, 30);
+            this.searchTextbox.Size = new System.Drawing.Size(890, 30);
             this.searchTextbox.TabIndex = 2;
             this.searchTextbox.TextChanged += new System.EventHandler(this.searchTextbox_TextChanged);
             // 
@@ -471,10 +491,25 @@
             this.searchLabel.TabIndex = 1;
             this.searchLabel.Text = "Search";
             // 
+            // clearBtn
+            // 
+            this.clearBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.clearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.clearBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clearBtn.Image = global::RestaurantManagementSystem.Properties.Resources.exit;
+            this.clearBtn.Location = new System.Drawing.Point(1556, 126);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(32, 30);
+            this.clearBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.clearBtn.TabIndex = 7;
+            this.clearBtn.TabStop = false;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            // 
             // posForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.searchTextbox);
             this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.orderDatagrid);
@@ -497,6 +532,7 @@
             this.bottomPanel.ResumeLayout(false);
             this.bottomPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderDatagrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clearBtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -532,5 +568,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn orderQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn productPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderAmount;
+        public System.Windows.Forms.Button checkoutBtn;
+        private System.Windows.Forms.PictureBox clearBtn;
     }
 }
