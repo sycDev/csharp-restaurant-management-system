@@ -66,8 +66,23 @@ namespace RestaurantManagementSystem.View
 
                 Label typeLb = new Label();
                 typeLb.ForeColor = Color.White;
-                typeLb.Margin = new Padding(10, 10, 3, 10);
+                typeLb.Margin = new Padding(10, 10, 3, 0);
                 typeLb.AutoSize = true;
+
+                Label cusNameLb = new Label();
+                cusNameLb.ForeColor = Color.White;
+                cusNameLb.Margin = new Padding(10, 10, 3, 0);
+                cusNameLb.AutoSize = true;
+
+                Label cusPhoneLb = new Label();
+                cusPhoneLb.ForeColor = Color.White;
+                cusPhoneLb.Margin = new Padding(10, 10, 3, 0);
+                cusPhoneLb.AutoSize = true;
+
+                Label driverlb = new Label();
+                driverlb.ForeColor = Color.White;
+                driverlb.Margin = new Padding(10, 10, 3, 10);
+                driverlb.AutoSize = true;
 
                 if ((dt1.Rows[i]["tableName"].ToString()) == "")
                 {
@@ -87,6 +102,33 @@ namespace RestaurantManagementSystem.View
                     waiterLb.Text = "Waiter: " + dt1.Rows[i]["waiterName"].ToString();
                 }
 
+                if ((dt1.Rows[i]["customerName"].ToString()) == "")
+                {
+                    cusNameLb.Text = "Customer Name: -";
+                }
+                else
+                {
+                    cusNameLb.Text = "Customer Name: " + dt1.Rows[i]["customerName"].ToString();
+                }
+
+                if ((dt1.Rows[i]["customerPhone"].ToString()) == "")
+                {
+                    cusPhoneLb.Text = "Customer Phone: -";
+                }
+                else
+                {
+                    cusPhoneLb.Text = "Customer Phone: " + dt1.Rows[i]["customerPhone"].ToString();
+                }
+
+                if ((dt1.Rows[i]["driverId"].ToString()) == "0")
+                {
+                    driverlb.Text = "Driver ID: -";
+                }
+                else
+                {
+                    driverlb.Text = "Driver ID: " + dt1.Rows[i]["driverId"].ToString();
+                }
+
                 timeLb.Text = "Order Time: " + dt1.Rows[i]["orderTime"].ToString();
                 typeLb.Text = "Order Type: " + dt1.Rows[i]["orderType"].ToString();
 
@@ -94,6 +136,9 @@ namespace RestaurantManagementSystem.View
                 orderDetailsPanel.Controls.Add(waiterLb);
                 orderDetailsPanel.Controls.Add(timeLb);
                 orderDetailsPanel.Controls.Add(typeLb);
+                orderDetailsPanel.Controls.Add(cusNameLb);
+                orderDetailsPanel.Controls.Add(cusPhoneLb);
+                orderDetailsPanel.Controls.Add(driverlb);
 
                 productPanel.Controls.Add(orderDetailsPanel);
 

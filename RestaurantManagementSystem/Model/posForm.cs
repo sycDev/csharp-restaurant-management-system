@@ -26,6 +26,12 @@ namespace RestaurantManagementSystem.Model
 
         public string orderType = "";
 
+        public int driverId = 0;
+
+        public string customerName = "";
+
+        public string customerPhone = "";
+
         public int id = 0;
 
         private void powerOffBtn_Click(object sender, EventArgs e)
@@ -183,10 +189,15 @@ namespace RestaurantManagementSystem.Model
             deliveryBtn.BackColor = Color.FromArgb(241, 85, 126);
             takeAwayBtn.BackColor = Color.FromArgb(241, 85, 126);
             dineInBtn.BackColor = Color.FromArgb(241, 85, 126);
+            driverId = 0;
+            customerName = "";
+            customerPhone = "";
             tableLabel.Text = "";
             waiterLabel.Text = "";
+            customerLabel.Text = "";
             tableLabel.Visible = false;
             waiterLabel.Visible = false;
+            customerLabel.Visible = false;
             clearBtn.Visible = true;
             checkoutBtn.Visible = false;
             orderDatagrid.Rows.Clear();
@@ -201,10 +212,29 @@ namespace RestaurantManagementSystem.Model
             takeAwayBtn.BackColor = Color.FromArgb(241, 85, 126);
             dineInBtn.BackColor = Color.FromArgb(241, 85, 126);
             orderType = "Delivery";
+            driverId = 0;
+            customerName = "";
+            customerPhone = "";
             tableLabel.Text = "";
             waiterLabel.Text = "";
+            customerLabel.Text = "";
             tableLabel.Visible = false;
             waiterLabel.Visible = false;
+            customerLabel.Visible = false;
+
+            customerDetailsForm frm = new customerDetailsForm();
+            frm.orderId = orderId;
+            frm.orderType = orderType;
+            MainClass.BlurBackground(frm);
+
+            if (frm.driverId > 0)
+            {
+                driverId = frm.driverId;
+                customerName = frm.cusNameTextbox.Text;
+                customerPhone = frm.cusPhoneTextbox.Text;
+                customerLabel.Text = "Customer Name: " + customerName + " Phone: " + customerPhone + " Driver: " + frm.driverCombobox.Text;
+                customerLabel.Visible = true;
+            }
         }
 
         private void takeAwayBtn_Click(object sender, EventArgs e)
@@ -213,10 +243,29 @@ namespace RestaurantManagementSystem.Model
             takeAwayBtn.BackColor = Color.FromArgb(50, 55, 89);
             dineInBtn.BackColor = Color.FromArgb(241, 85, 126);
             orderType = "Take Away";
+            driverId = 0;
+            customerName = "";
+            customerPhone = "";
             tableLabel.Text = "";
             waiterLabel.Text = "";
+            customerLabel.Text = "";
             tableLabel.Visible = false;
             waiterLabel.Visible = false;
+            customerLabel.Visible = false;
+
+            customerDetailsForm frm = new customerDetailsForm();
+            frm.orderId = orderId;
+            frm.orderType = orderType;
+            MainClass.BlurBackground(frm);
+
+            if (frm.cusNameTextbox.Text != "")
+            {
+                driverId = frm.driverId;
+                customerName = frm.cusNameTextbox.Text;
+                customerPhone = frm.cusPhoneTextbox.Text;
+                customerLabel.Text = "Customer Name: " + frm.cusNameTextbox.Text + " Phone: " + frm.cusPhoneTextbox.Text;
+                customerLabel.Visible = true;
+            }
         }
 
         private void dineInBtn_Click(object sender, EventArgs e)
@@ -225,6 +274,8 @@ namespace RestaurantManagementSystem.Model
             takeAwayBtn.BackColor = Color.FromArgb(241, 85, 126);
             dineInBtn.BackColor = Color.FromArgb(50, 55, 89);
             orderType = "Dine In";
+            customerLabel.Text = "";
+            customerLabel.Visible = false;
 
             tableSelectForm tFrm = new tableSelectForm();
             MainClass.BlurBackground(tFrm);
@@ -281,6 +332,18 @@ namespace RestaurantManagementSystem.Model
                     return;
                 }
             }
+            else if (orderType == "Delivery" && customerLabel.Text == "")
+            {
+                MessageBox.Show("Please enter the customer and driver details by clicking the Delivery button again", "KOT", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                return;
+            }
+            else if (orderType == "Take Away" && customerLabel.Text == "")
+            {
+                MessageBox.Show("Please enter the customer details by clicking the Take Away button again", "KOT", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                return;
+            }
 
             // Validation for no product been added
             if (orderDatagrid.Rows.Count == 0)
@@ -297,7 +360,7 @@ namespace RestaurantManagementSystem.Model
             if (orderId == 0) // Insert
             {
                 ordersQry = @"INSERT INTO orders VALUES(@orderDate, @orderTime, @tableName, @waiterName, @status, 
-                                @orderType, @total, @received, @change);
+                                @orderType, @total, @received, @change, @driverId, @cusName, @cusPhone);
                                 SELECT SCOPE_IDENTITY()";
             }
             else // Update
@@ -318,6 +381,9 @@ namespace RestaurantManagementSystem.Model
             // only saving data for kitchen, value will update when payment received
             oCmd.Parameters.AddWithValue("@received", Convert.ToDouble(0));
             oCmd.Parameters.AddWithValue("@change", Convert.ToDouble(0));
+            oCmd.Parameters.AddWithValue("@driverId", driverId);
+            oCmd.Parameters.AddWithValue("@cusName", customerName);
+            oCmd.Parameters.AddWithValue("@cusPhone", customerPhone);
 
             if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
             if (orderId == 0) { orderId = Convert.ToInt32(oCmd.ExecuteScalar()); } else { oCmd.ExecuteNonQuery(); }
@@ -351,14 +417,19 @@ namespace RestaurantManagementSystem.Model
 
             MessageBox.Show("Saved Successfully...", "KOT", MessageBoxButtons.OK, MessageBoxIcon.Information);
             orderId = 0;
+            driverId = 0;
+            customerName = "";
+            customerPhone = "";
             orderDatagrid.Rows.Clear();
             deliveryBtn.BackColor = Color.FromArgb(241, 85, 126);
             takeAwayBtn.BackColor = Color.FromArgb(241, 85, 126);
             dineInBtn.BackColor = Color.FromArgb(241, 85, 126);
             tableLabel.Text = "";
             waiterLabel.Text = "";
+            customerLabel.Text = "";
             tableLabel.Visible = false;
             waiterLabel.Visible = false;
+            customerLabel.Visible = false;
             totalTxtLabel.Text = "0.00";
         }
 
@@ -459,6 +530,133 @@ namespace RestaurantManagementSystem.Model
         private void clearBtn_Click(object sender, EventArgs e)
         {
             orderDatagrid.Rows.Clear();
+            totalTxtLabel.Text = "0.00";
+        }
+
+        private void holdBtn_Click(object sender, EventArgs e)
+        {
+            // Validation for order type selection
+            if (orderType == "")
+            {
+                MessageBox.Show("Please select the order type by clicking button above (Delivery/Take Away/Dine In)", "KOT", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                return;
+            }
+
+            if (orderType == "Dine In")
+            {
+                if (tableLabel.Text == "")
+                {
+                    MessageBox.Show("Please select table by clicking the Dine In button again", "KOT", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    return;
+                }
+
+                if (waiterLabel.Text == "")
+                {
+                    MessageBox.Show("Please select waiter by clicking the Dine In button again", "KOT", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    return;
+                }
+            }
+            else if (orderType == "Delivery" && customerLabel.Text == "")
+            {
+                MessageBox.Show("Please enter the customer and driver details by clicking the Delivery button again", "KOT", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                return;
+            }
+            else if (orderType == "Take Away" && customerLabel.Text == "")
+            {
+                MessageBox.Show("Please enter the customer details by clicking the Take Away button again", "KOT", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                return;
+            }
+
+            // Validation for no product been added
+            if (orderDatagrid.Rows.Count == 0)
+            {
+                MessageBox.Show("No product been added yet", "KOT", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                return;
+            }
+
+            string ordersQry = "";
+            string orderDetailsQry = "";
+            int orderDetailsId = 0;
+
+            if (orderId == 0) // Insert
+            {
+                ordersQry = @"INSERT INTO orders VALUES(@orderDate, @orderTime, @tableName, @waiterName, @status, 
+                                @orderType, @total, @received, @change, @driverId, @cusName, @cusPhone);
+                                SELECT SCOPE_IDENTITY()";
+            }
+            else // Update
+            {
+                orderDetailsQry = @"UPDATE orders SET status = @status, total = @total, received = @received, 
+                                        change = @change WHERE orderID = @id";
+            }
+
+            SqlCommand oCmd = new SqlCommand(ordersQry, MainClass.con);
+            oCmd.Parameters.AddWithValue("@id", orderId);
+            oCmd.Parameters.AddWithValue("@orderDate", Convert.ToDateTime(DateTime.Now.Date));
+            oCmd.Parameters.AddWithValue("@orderTime", DateTime.Now.ToShortTimeString());
+            oCmd.Parameters.AddWithValue("@tableName", tableLabel.Text);
+            oCmd.Parameters.AddWithValue("@waiterName", waiterLabel.Text);
+            oCmd.Parameters.AddWithValue("@status", "Hold");
+            oCmd.Parameters.AddWithValue("@orderType", orderType);
+            oCmd.Parameters.AddWithValue("@total", Convert.ToDouble(totalTxtLabel.Text));
+            // only saving data for kitchen, value will update when payment received
+            oCmd.Parameters.AddWithValue("@received", Convert.ToDouble(0));
+            oCmd.Parameters.AddWithValue("@change", Convert.ToDouble(0));
+            oCmd.Parameters.AddWithValue("@driverId", driverId);
+            oCmd.Parameters.AddWithValue("@cusName", customerName);
+            oCmd.Parameters.AddWithValue("@cusPhone", customerPhone);
+
+            if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
+            if (orderId == 0) { orderId = Convert.ToInt32(oCmd.ExecuteScalar()); } else { oCmd.ExecuteNonQuery(); }
+            if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
+
+            foreach (DataGridViewRow row in orderDatagrid.Rows)
+            {
+                orderDetailsId = Convert.ToInt32(row.Cells["orderDetailsId"].Value);
+
+                if (orderDetailsId == 0) // Insert
+                {
+                    orderDetailsQry = @"INSERT INTO orderDetails VALUES(@orderId, @productId, @qty, @price, @amount)";
+                }
+                else // Update
+                {
+                    orderDetailsQry = @"UPDATE orderDetails SET productId = @productId, qty = @qty, price = @price,
+                                        amount = @amount WHERE orderDetailsId = @id";
+                }
+
+                SqlCommand odCmd = new SqlCommand(orderDetailsQry, MainClass.con);
+                odCmd.Parameters.AddWithValue("@orderId", orderId);
+                odCmd.Parameters.AddWithValue("@productId", Convert.ToInt32(row.Cells["productId"].Value));
+                odCmd.Parameters.AddWithValue("@qty", Convert.ToInt32(row.Cells["orderQty"].Value));
+                odCmd.Parameters.AddWithValue("@price", Convert.ToDouble(row.Cells["productPrice"].Value));
+                odCmd.Parameters.AddWithValue("@amount", Convert.ToDouble(row.Cells["orderAmount"].Value));
+
+                if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
+                odCmd.ExecuteNonQuery();
+                if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
+            }
+
+            MessageBox.Show("Saved Successfully...", "KOT", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            orderId = 0;
+            driverId = 0;
+            customerName = "";
+            customerPhone = "";
+            orderDatagrid.Rows.Clear();
+            deliveryBtn.BackColor = Color.FromArgb(241, 85, 126);
+            takeAwayBtn.BackColor = Color.FromArgb(241, 85, 126);
+            dineInBtn.BackColor = Color.FromArgb(241, 85, 126);
+            tableLabel.Text = "";
+            waiterLabel.Text = "";
+            customerLabel.Text = "";
+            tableLabel.Visible = false;
+            waiterLabel.Visible = false;
+            customerLabel.Visible = false;
             totalTxtLabel.Text = "0.00";
         }
     }

@@ -100,6 +100,7 @@
             "Waiter",
             "Cleaner",
             "Manager",
+            "Driver",
             "Other"});
             this.staffRoleCombobox.Location = new System.Drawing.Point(41, 296);
             this.staffRoleCombobox.Name = "staffRoleCombobox";

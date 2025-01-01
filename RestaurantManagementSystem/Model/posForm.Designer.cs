@@ -44,6 +44,7 @@
             this.powerOffBtn = new System.Windows.Forms.PictureBox();
             this.posIcon = new System.Windows.Forms.PictureBox();
             this.bottomPanel = new System.Windows.Forms.Panel();
+            this.customerLabel = new System.Windows.Forms.Label();
             this.checkoutBtn = new System.Windows.Forms.Button();
             this.totalTxtLabel = new System.Windows.Forms.Label();
             this.totalLabel = new System.Windows.Forms.Label();
@@ -201,6 +202,7 @@
             this.holdBtn.Text = "Hold";
             this.holdBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.holdBtn.UseVisualStyleBackColor = false;
+            this.holdBtn.Click += new System.EventHandler(this.holdBtn_Click);
             // 
             // newBtn
             // 
@@ -287,6 +289,7 @@
             // bottomPanel
             // 
             this.bottomPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.bottomPanel.Controls.Add(this.customerLabel);
             this.bottomPanel.Controls.Add(this.checkoutBtn);
             this.bottomPanel.Controls.Add(this.totalTxtLabel);
             this.bottomPanel.Controls.Add(this.totalLabel);
@@ -295,6 +298,19 @@
             this.bottomPanel.Name = "bottomPanel";
             this.bottomPanel.Size = new System.Drawing.Size(1600, 100);
             this.bottomPanel.TabIndex = 6;
+            // 
+            // customerLabel
+            // 
+            this.customerLabel.AutoSize = true;
+            this.customerLabel.BackColor = System.Drawing.Color.Transparent;
+            this.customerLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerLabel.ForeColor = System.Drawing.Color.White;
+            this.customerLabel.Location = new System.Drawing.Point(20, 36);
+            this.customerLabel.Name = "customerLabel";
+            this.customerLabel.Size = new System.Drawing.Size(112, 31);
+            this.customerLabel.TabIndex = 9;
+            this.customerLabel.Text = "Customer";
+            this.customerLabel.Visible = false;
             // 
             // checkoutBtn
             // 
@@ -478,7 +494,7 @@
             // 
             this.searchTextbox.Location = new System.Drawing.Point(311, 129);
             this.searchTextbox.Name = "searchTextbox";
-            this.searchTextbox.Size = new System.Drawing.Size(890, 30);
+            this.searchTextbox.Size = new System.Drawing.Size(295, 30);
             this.searchTextbox.TabIndex = 2;
             this.searchTextbox.TextChanged += new System.EventHandler(this.searchTextbox_TextChanged);
             // 
@@ -570,5 +586,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn orderAmount;
         public System.Windows.Forms.Button checkoutBtn;
         private System.Windows.Forms.PictureBox clearBtn;
+        private System.Windows.Forms.Label customerLabel;
     }
 }
