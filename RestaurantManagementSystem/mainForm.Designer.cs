@@ -42,9 +42,17 @@
             this.kitchenBtn = new System.Windows.Forms.Button();
             this.settingsBtn = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.welcomeLabel = new System.Windows.Forms.Label();
+            this.welcomePic = new System.Windows.Forms.PictureBox();
+            this.panelForLabel = new System.Windows.Forms.Panel();
+            this.panelForPicture = new System.Windows.Forms.Panel();
             this.sidebarPanel.SuspendLayout();
             this.sidebarHeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appLogo)).BeginInit();
+            this.mainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.welcomePic)).BeginInit();
+            this.panelForLabel.SuspendLayout();
+            this.panelForPicture.SuspendLayout();
             this.SuspendLayout();
             // 
             // appLabel
@@ -116,7 +124,7 @@
             this.homeBtn.Text = "             Home";
             this.homeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.homeBtn.UseVisualStyleBackColor = true;
-            this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
+            this.homeBtn.Visible = false;
             // 
             // categoriesBtn
             // 
@@ -249,14 +257,59 @@
             this.settingsBtn.Text = "             Settings";
             this.settingsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.settingsBtn.UseVisualStyleBackColor = true;
+            this.settingsBtn.Visible = false;
             // 
             // mainPanel
             // 
+            this.mainPanel.AutoSize = true;
+            this.mainPanel.Controls.Add(this.panelForPicture);
+            this.mainPanel.Controls.Add(this.panelForLabel);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(300, 0);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(1582, 913);
             this.mainPanel.TabIndex = 1;
+            // 
+            // welcomeLabel
+            // 
+            this.welcomeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.welcomeLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcomeLabel.Location = new System.Drawing.Point(0, 0);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(1582, 250);
+            this.welcomeLabel.TabIndex = 1;
+            this.welcomeLabel.Text = "Welcome to iRestaurant - A Comprehensive Restaurant Management System";
+            this.welcomeLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // welcomePic
+            // 
+            this.welcomePic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.welcomePic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.welcomePic.Image = global::RestaurantManagementSystem.Properties.Resources.home;
+            this.welcomePic.Location = new System.Drawing.Point(0, 0);
+            this.welcomePic.Name = "welcomePic";
+            this.welcomePic.Size = new System.Drawing.Size(1582, 500);
+            this.welcomePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.welcomePic.TabIndex = 0;
+            this.welcomePic.TabStop = false;
+            // 
+            // panelForLabel
+            // 
+            this.panelForLabel.Controls.Add(this.welcomeLabel);
+            this.panelForLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelForLabel.Location = new System.Drawing.Point(0, 0);
+            this.panelForLabel.Name = "panelForLabel";
+            this.panelForLabel.Size = new System.Drawing.Size(1582, 250);
+            this.panelForLabel.TabIndex = 2;
+            // 
+            // panelForPicture
+            // 
+            this.panelForPicture.Controls.Add(this.welcomePic);
+            this.panelForPicture.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelForPicture.Location = new System.Drawing.Point(0, 250);
+            this.panelForPicture.Name = "panelForPicture";
+            this.panelForPicture.Size = new System.Drawing.Size(1582, 500);
+            this.panelForPicture.TabIndex = 3;
             // 
             // mainForm
             // 
@@ -278,7 +331,12 @@
             this.sidebarHeaderPanel.ResumeLayout(false);
             this.sidebarHeaderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appLogo)).EndInit();
+            this.mainPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.welcomePic)).EndInit();
+            this.panelForLabel.ResumeLayout(false);
+            this.panelForPicture.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -296,5 +354,9 @@
         private System.Windows.Forms.Button kitchenBtn;
         private System.Windows.Forms.Button settingsBtn;
         private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.Label welcomeLabel;
+        private System.Windows.Forms.PictureBox welcomePic;
+        private System.Windows.Forms.Panel panelForLabel;
+        private System.Windows.Forms.Panel panelForPicture;
     }
 }

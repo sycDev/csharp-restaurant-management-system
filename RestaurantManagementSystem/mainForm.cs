@@ -40,11 +40,6 @@ namespace RestaurantManagementSystem
             f.Show();
         }
 
-        private void homeBtn_Click(object sender, EventArgs e)
-        {
-            AddControls(new homeForm());
-        }
-
         private void categoriesBtn_Click(object sender, EventArgs e)
         {
             AddControls(new categoryViewForm());
